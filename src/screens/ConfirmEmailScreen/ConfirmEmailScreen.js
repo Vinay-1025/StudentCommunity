@@ -28,7 +28,7 @@ const ConfirmEmailScreen = () => {
             <CustomInput placeholder="Enter Your Confirmation Code" value={code} setValue={setCode} />
 
             <CustomButton text="Confirm" onPress={onConfirmPressed} bgColor="#3B71F3" fgColor="white"/>
-            <CustomButton text="Resend code" onPress={onResendPressed} fgColor="white"/>
+            <CustomButton text="Resend code" onPress={onResendPressed} bgColor="#7755" fgColor="white"/>
             <View style={styles.inner}>
 
             <CustomButton text="Already have an account?, SIGNUP here." onPress={onSignInPress} fgColor="#66aa5c" />
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#ddccaa',
+        color: '#225577',
         margin: 10,
     },
     text:{
