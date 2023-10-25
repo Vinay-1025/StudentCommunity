@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/core";
 
 const ConfirmEmailScreen = () => {
     const [code, setCode] = useState('');
+
     const navigation = useNavigation();
 
     const onConfirmPressed = () => {

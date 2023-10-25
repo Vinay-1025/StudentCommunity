@@ -8,6 +8,7 @@ import { useNavigation } from "@react-navigation/core";
 const SignUpScreen = () => {
     const [username, setUsername] = useState('');
     const [StudentID, setStudentID] = useState('');
+    const [field, setField] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
 
@@ -33,6 +34,7 @@ const SignUpScreen = () => {
             <View style={styles.cont} >
             <CustomInput placeholder="Username" value={username} setValue={setUsername} />
             <CustomInput placeholder="StudentID" value={StudentID} setValue={setStudentID} />
+            <CustomInput placeholder="Community (FIELD)" value={field} setValue={setField} />
             <CustomInput placeholder="Password" value={password} setValue={setPassword} secureTextEntry={true} />
             <CustomInput placeholder="Repeat Password" value={passwordRepeat} setValue={setPasswordRepeat} secureTextEntry={true} />
 
