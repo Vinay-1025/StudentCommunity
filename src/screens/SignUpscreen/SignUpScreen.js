@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
         top: '10%',
-        paddingTop: 60,
+        paddingTop: 20,
         padding: 30,
         borderRadius: '100%',
     },
