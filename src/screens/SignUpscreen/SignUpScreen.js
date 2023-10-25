@@ -18,7 +18,7 @@ const SignUpScreen = () => {
     };
 
     const onSignInPress = () => {
-        navigation.navigate(SignIn);
+        navigation.navigate('SignIn');
     }
     const onTermsOfUsePressed = () => {
         console.warn('Terms of use')
@@ -43,7 +43,7 @@ const SignUpScreen = () => {
 
             <View style={styles.inner}>
 
-            <CustomButton text="Already have an account?, SIGNUP here." onPress={onSignInPress} fgColor="#66aa5c" />
+            <CustomButton text="Already have an account?, SIGNIN here." onPress={onSignInPress} fgColor="#66aa5c" />
             </View>
             </View>
         </View>
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     inner:{
-        paddingTop: 30,
         width: '100%',
         height: '100%',
         alignItems: 'center'

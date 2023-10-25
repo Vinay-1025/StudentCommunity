@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     inner:{
-        paddingTop: 30,
         width: '100%',
         height: '100%',
         alignItems: 'center'
