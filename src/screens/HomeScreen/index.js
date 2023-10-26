@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 const App = () => {
     const scaleValue = new Animated.Value(1);
     const [showNotifications, setShowNotifications] = useState(false);
+    const [isBookmarked, setIsBookmarked] = useState(false);
 
     const tabBarOptions = {
         activeTintColor: '#225577',
@@ -40,6 +41,11 @@ const App = () => {
                 <View style={styles.iconContainer}>
                     <TouchableOpacity onPress={() => setShowNotifications(!showNotifications)}>
                         <Ionicons name={showNotifications ? 'notifications' : 'notifications-outline'} size={25} color="#fff" />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.iconContainer}>
+                    <TouchableOpacity onPress={() => setIsBookmarked(!isBookmarked)}>
+                        <Ionicons name={isBookmarked ? 'bookmark' : 'bookmark-outline'} size={25} color="#fff" />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.iconContainer}>
@@ -88,7 +94,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems:'flex-end',
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         height: 80,
         backgroundColor: '#225577',
     },
