@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems:'flex-end',
         paddingHorizontal: 20,
-        height: 70,
+        height: 80,
         backgroundColor: '#225577',
     },
     title: {
