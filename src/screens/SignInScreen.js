@@ -29,7 +29,7 @@ const SignInScreen = () => {
         <View style={styles.root} >
             <Image
                 source={Logo}
-                style={[styles.logo, { height: height * 0.15 , borderRadius: 100 , width: height * 0.15, borderColor: '#f42233', borderWidth: 1}]}
+                style={[styles.logo, { height: height * 0.15 , borderRadius: 100 , width: height * 0.15, borderColor: '#2277', borderWidth: 1}]}
                 resizeMode="contain"
             />
             <View style={styles.cont} >

@@ -1,8 +1,7 @@
-import React from 'react';
-import { StyleSheet, View, Animated } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Animated, TouchableOpacity, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import Home from './Home';
 import Post from './Post';
@@ -14,15 +13,41 @@ const Tab = createBottomTabNavigator();
 
 const App = () => {
     const scaleValue = new Animated.Value(1);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     const tabBarOptions = {
-        activeTintColor: 'black',
+        activeTintColor: '#225577',
         inactiveTintColor: '#999',
-        style: { backgroundColor: '#5522', height: 70 }, // Increase tab bar height
+        style: { backgroundColor: '#5522', height: 70 },
+        labelStyle: { fontSize: 14, color: '#552277' },
+    };
+
+    const openMenu = () => {
+        // Functionality to open the menu
     };
 
     return (
         <View style={styles.root}>
+            <View style={styles.header}>
+                <View style={styles.cont}>
+                <Text style={styles.title}>
+                    Student Community
+                </Text>
+                <Text style={styles.subtitle}>
+                    connects with your community people.
+                </Text>
+                </View>
+                <View style={styles.iconContainer}>
+                    <TouchableOpacity onPress={() => setShowNotifications(!showNotifications)}>
+                        <Ionicons name={showNotifications ? 'notifications' : 'notifications-outline'} size={25} color="#fff" />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.iconContainer}>
+                    <TouchableOpacity onPress={() => openMenu()}>
+                        <Ionicons name="menu" size={25} color="#fff" />
+                    </TouchableOpacity>
+                </View>
+            </View>
             <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -38,29 +63,7 @@ const App = () => {
                         } else if (route.name === 'Settings') {
                             iconName = focused ? 'settings' : 'settings-outline';
                         }
-
-                        return (
-                            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                                <Animated.View
-                                    style={[
-                                        {
-                                            transform: [
-                                                {
-                                                    scale: focused
-                                                        ? scaleValue.interpolate({
-                                                            inputRange: [0, 2],
-                                                            outputRange: [1, 1.5],
-                                                        })
-                                                        : 1,
-                                                },
-                                            ],
-                                        },
-                                    ]}
-                                >
-                                    <Ionicons name={iconName} size={size} color={color} />
-                                </Animated.View>
-                            </View>
-                        );
+                        return <Ionicons name={iconName} size={size} color={color} />;
                     },
                 })}
                 tabBarOptions={tabBarOptions}
@@ -79,6 +82,28 @@ const styles = StyleSheet.create({
     root: {
         flex: 1,
         backgroundColor: '#000',
+    },
+
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems:'flex-end',
+        paddingHorizontal: 20,
+        height: 70,
+        backgroundColor: '#225577',
+    },
+    title: {
+        color:'white',
+        fontSize: 25,
+        textTransform:'uppercase',
+    },
+    subtitle: {
+        color: 'white',
+        textTransform: 'capitalize',
+        paddingBottom: 2,
+    },
+    iconContainer: {
+        padding: 10,
     },
 });
 

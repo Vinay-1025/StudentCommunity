@@ -21,15 +21,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
         height: 30,
-        borderColor: 'red',
+        borderColor: '#2277',
         borderWidth: 1,
         borderRadius: 5,
         paddingHorizontal: 20,
         marginVertical: 5,
     },
     input:{
-        color: 'red',
-        fontWeight: 'bold',
+        color: 'black',
         fontSize: 20,
     },
 });

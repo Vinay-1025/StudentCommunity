@@ -5,7 +5,7 @@ import Navigation from './src/navigation';
 const App = () => {
   return(
     <SafeAreaView style={styles.root}>
-      <Navigation />
+      <Navigation style={styles.root}/>
     </SafeAreaView>
   );
 };
@@ -13,11 +13,7 @@ const App = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: 'black'
-  },
-  container:{
-    justifyContent: 'center',
-    backgroundColor: 'black',
+    backgroundColor: '#5577'
   },
 });
 
