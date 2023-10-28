@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Animated, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, Animated, TouchableOpacity, Text, Image, Alert } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import logo from '../../../assets/images/log.png';
 
 import Home from './Home';
 import Post from './Post';
@@ -10,6 +11,7 @@ import Community from './Community';
 import Settings from './Settings';
 
 const Tab = createBottomTabNavigator();
+
 
 const App = () => {
     const scaleValue = new Animated.Value(1);
@@ -24,7 +26,16 @@ const App = () => {
     };
 
     const openMenu = () => {
-        // Functionality to open the menu
+        Alert.alert(
+            'Menu',
+            'Menu options go here.',
+            [
+                { text: 'Option 1', onPress: () => console.warn('Option 1 Pressed') },
+                { text: 'Option 2', onPress: () => console.warn('Option 2 Pressed') },
+                { text: 'Cancel', style: 'cancel' },
+            ],
+            { cancelable: true }
+        );
     };
 
     return (
@@ -74,11 +85,21 @@ const App = () => {
                 })}
                 tabBarOptions={tabBarOptions}
             >
-                <Tab.Screen name="Home" component={Home} />
-                <Tab.Screen name="Post" component={Post} />
-                <Tab.Screen name="Upload" component={Upload} />
-                <Tab.Screen name="Community" component={Community} />
-                <Tab.Screen name="Settings" component={Settings} />
+                <Tab.Screen name="Home" component={Home} options={{
+                    headerShown: false,
+                }}/>
+                <Tab.Screen name="Post" component={Post} options={{
+                    headerShown: false,
+                }} />
+                <Tab.Screen name="Upload" component={Upload} options={{
+                    headerShown: false,
+                }} />
+                <Tab.Screen name="Community" component={Community} options={{
+                    headerShown: false,
+                }} />
+                <Tab.Screen name="Settings" component={Settings} options={{
+                    headerShown: false,
+                }} />
             </Tab.Navigator>
         </View>
     );
